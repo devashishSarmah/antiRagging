@@ -11,12 +11,14 @@
     Write about the incident and the details you would like to share
   </p>
   <textarea
-    class="form-control w-full mt-3 border rounded border-gray-300 border-solid min-h-full h-32"
+    [(ngModel)]="text"
+    class="form-control focus:outline-none caret-black w-full mt-3 border rounded border-gray-300 border-solid min-h-full h-32"
   ></textarea>
   <div class="w-full flex justify-center mt-2">
     <button
       class="form-control block text-sm text-slate-500 py-2 px-4 rounded-full border-0 text-sm font-semibold bg-violet-50 text-violet-700 hover:bg-violet-100"
       (click)="onClickPost()"
+      [disabled]="!text.trim().length"
     >
       Post
     </button>

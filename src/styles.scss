@@ -7,6 +7,10 @@
 
 @include mat.core();
 
+body {
+  background: #eff2f5;
+}
+
 .mat-mdc-dialog-container .mdc-dialog__surface {
   @apply rounded shadow-sm #{!important};
 }

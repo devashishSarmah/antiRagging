@@ -1,2 +1,23 @@
 <app-header></app-header>
-<div class="container mx-auto"></div>
+<div class="container mx-auto">
+  <div class="flex items-center flex-col mt-8">
+    <div
+      *ngFor="let post of fbOps.items$ | async"
+      class="w-96 mb-5 flex items-start"
+    >
+      <i class="fa-solid text-lg fa-circle-user"></i>
+      <div
+        class="grow flex flex-col ml-3 bg-white shadow-md rounded-[15px] px-3 py-2"
+      >
+        <div class="flex justify-end">
+          <p class="text-xs text-gray-400">
+            {{ $any(post).timestamp?.seconds | formatTimestamp }}
+          </p>
+        </div>
+        <p class="mt-2 text-sm">
+          {{ $any(post).text }}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
