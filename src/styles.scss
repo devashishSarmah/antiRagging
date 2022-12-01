@@ -1,4 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+@use "@angular/material" as mat;
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@include mat.core();
+
+.mat-mdc-dialog-container .mdc-dialog__surface {
+  @apply rounded shadow-sm #{!important};
+}
